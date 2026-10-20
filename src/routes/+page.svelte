@@ -1,15 +1,14 @@
 <script>
-
+    let open = $state(true);
 </script>
-
-<!---Intro--->
 
 <main class="main-block">
     
     <!---Nav bar--->
-    <nav>
-        <div class="nav-header">Blog Wog</div>
-        <!----<div class="theme"></div>-->        
+    <nav class:open class:close={!open} onclick={() => (open = !open)}>
+        <div class="nav-header" class:vanish={!open}>
+            Blog Wog
+        </div>
     </nav>
 
     <!---Posts--->
