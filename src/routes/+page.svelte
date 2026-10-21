@@ -7,22 +7,26 @@
         busy = true;
         open = !open;
 
-        setTimeout(() => {}, 100);
+        setTimeout(() => {
+            busy = false;
+        }, 1500);
     }
-
-    function done(e) {
-        if (e.target === e.currentTarget) busy = false;
-    } 
 
 </script>
 
 <main class="main-block">
     
     <!---Nav bar--->
-    <nav class:open class:close={!open} onclick={toggle} ontransitionend={done}>
-        <div class="nav-header" class:vanish={!open}>
-            Blog Wog
-        </div>
+    <nav class:open class:close={!open}>
+        <button class="nav-toggle" aria-label={open ? "Open" : "Close"} onclick={toggle}>
+            <span class="material-symbols-outlined vanish" class:vanish={open}>menu</span>
+        </button>
+
+        <div class="nav-grid">
+            <div class="home">Home</div>
+            <div class="nav-header" class:vanish={!open}>Blog Wog</div>
+            <div class="post">Post</div>
+        </div>    
     </nav>
 
     <!---Posts--->
