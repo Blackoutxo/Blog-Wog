@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 .space-grotesk {
@@ -136,11 +137,61 @@ nav.close {
     }
 }
 
-.nav-header {
-    position: absolute;
-    top: 5%;
-    left: 40%;
+.nav-toggle {
+    width: 100%;
+    height: 100%;
 
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+    background: transparent;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.material-symbols-outlined.vanish {
+    animation: 0.1s vanish-icon ease-in-out forwards;
+  
+    font-variation-settings:
+    'FILL' 0,  
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+@keyframes vanish-icon {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.nav-grid {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20vw;
+
+    align-items: center;
+}
+
+.nav-header {
     font-weight: 800;
     font-size: 3vw;
 
